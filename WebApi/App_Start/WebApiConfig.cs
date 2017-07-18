@@ -14,6 +14,7 @@ namespace WebApi
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+            // Rota no WebApi é api/{controller}
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
