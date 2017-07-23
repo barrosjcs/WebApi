@@ -7,8 +7,8 @@
     <ProjectGuid>{9EA21ED4-DDC9-49B2-81BD-D3030AF14B6A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BookeStore.Domain</RootNamespace>
-    <AssemblyName>BookeStore.Domain</AssemblyName>
+    <RootNamespace>BookStore.Domain</RootNamespace>
+    <AssemblyName>BookStore.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

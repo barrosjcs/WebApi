@@ -1,7 +1,6 @@
-﻿using BookStore.Domain;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace BookeStore.Domain.Contracts
+namespace BookStore.Domain.Contracts
 {
     public interface IBookRepository : IRepository<Book>
     {
