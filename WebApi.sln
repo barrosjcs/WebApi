@@ -5,11 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{F1B8FCBE-197C-44CD-9A1E-0DD128D6EBF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Domain", "BookeStore.Domain\BookStore.Domain.csproj", "{9EA21ED4-DDC9-49B2-81BD-D3030AF14B6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Domain", "BookStore.Domain\BookStore.Domain.csproj", "{9EA21ED4-DDC9-49B2-81BD-D3030AF14B6A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Data", "BookStore.Data\BookStore.Data.csproj", "{8F91A69D-0D0C-4AFD-B61A-9E3A236B0F26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Api", "BokkStore.Api\BookStore.Api.csproj", "{7104E138-6C01-4563-AE9C-F21E490BAE32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Api", "BookStore.Api\BookStore.Api.csproj", "{7104E138-6C01-4563-AE9C-F21E490BAE32}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Utils", "BookStore.Utils\BookStore.Utils.csproj", "{53B48210-B66C-43C6-9D01-25F806B2550B}"
 EndProject
