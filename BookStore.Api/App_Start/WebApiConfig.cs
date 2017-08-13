@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System.Web.Http;
 
 namespace BookStore.Api
 {
@@ -11,6 +13,11 @@ namespace BookStore.Api
             // Remove o XML Formatter. XML é mais pesado, então para economizar o trafego de dados é melhor remove-lo e utilizar JSON
             var formatters = GlobalConfiguration.Configuration.Formatters;
             formatters.Remove(formatters.XmlFormatter);
+
+            // Modificar a serialização. Passar json iniciando em minusculo
+            var jsonSettings = formatters.JsonFormatter.SerializerSettings;
+            jsonSettings.Formatting = Formatting.Indented;
+            jsonSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
             // Web API routes
             config.MapHttpAttributeRoutes();
