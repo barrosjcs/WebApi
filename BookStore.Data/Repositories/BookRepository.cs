@@ -6,7 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 
 namespace BookStore.Data.Repositories
-{
+{    
     public class BookRepository : IBookRepository
     {
         private readonly BookStoreDataContext _db;

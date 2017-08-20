@@ -10,10 +10,17 @@ using System.Web.Http;
 
 namespace BookStore.Api.Controllers
 {
+    [RoutePrefix("api/public/v1")]
     public class BookController : ApiController
     {
-        private readonly IBookRepository repository = new BookRepository();
+        private readonly IBookRepository repository;
 
+        public BookController(IBookRepository pRepository)
+        {
+            repository = pRepository;
+        }
+
+        [Route("livros")]
         public List<Book> Get()
         {
             return repository.Get(0, 30);
