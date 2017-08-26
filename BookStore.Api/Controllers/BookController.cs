@@ -1,12 +1,9 @@
-﻿using BookStore.Data.Repositories;
-using BookStore.Domain;
+﻿using BookStore.Domain;
 using BookStore.Domain.Contracts;
-using System;
+using BookStore.Utils.Attributes;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using WebApi.OutputCache.V2;
 
 namespace BookStore.Api.Controllers
 {
@@ -21,8 +18,11 @@ namespace BookStore.Api.Controllers
         }
 
         [Route("livros")]
+        [DeflateCompression]
+        [CacheOutput(ClientTimeSpan = 100, ServerTimeSpan = 100)]
         public List<Book> Get()
         {
+            /*DeflateCompression - Criado para comprimir os dados na transferência. Atributo existente na web*/
             return repository.Get(0, 30);
         }
 
