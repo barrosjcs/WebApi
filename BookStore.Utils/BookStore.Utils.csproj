@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\BasicAuthenticationAttribute.cs" />
     <Compile Include="Attributes\DeflateCompressionAttribute.cs" />
     <Compile Include="Helpers\CompressionHelper.cs" />
     <Compile Include="Helpers\UntyResolver.cs" />
