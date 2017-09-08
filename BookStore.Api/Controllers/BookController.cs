@@ -34,7 +34,7 @@ namespace BookStore.Api.Controllers
             /*Task - Representa uma operação assíncrona*/
             /*HttpResponseMessage - Operador que controla qual é a resposta que deseja enviar do seu serviço*/
             /*BasicAuthentication - Atributo de autenticação do usuário*/
-            HttpResponseMessage response = new HttpResponseMessage();
+            HttpResponseMessage response;
 
             try
             {
@@ -58,7 +58,7 @@ namespace BookStore.Api.Controllers
         [Route("livros/{id}")]
         public Task<HttpResponseMessage> GetById(int id)
         {
-            HttpResponseMessage response = new HttpResponseMessage();
+            HttpResponseMessage response;
 
             try
             {
@@ -82,7 +82,7 @@ namespace BookStore.Api.Controllers
         [Route("livros/{id}/autores")]
         public Task<HttpResponseMessage> GetAuthors(int id)
         {
-            HttpResponseMessage response = new HttpResponseMessage();
+            HttpResponseMessage response;
 
             try
             {
@@ -98,6 +98,54 @@ namespace BookStore.Api.Controllers
             var tsk = new TaskCompletionSource<HttpResponseMessage>();
             tsk.SetResult(response);
             return tsk.Task;
+        }
+        #endregion
+
+        #region Update
+        [HttpPut]
+        [Route("livros")]
+        public Task<HttpResponseMessage> Put(Book book)
+        {
+            HttpResponseMessage response;
+
+            try
+            {
+                repository.Update(book);
+                response = Request.CreateResponse(HttpStatusCode.OK, book);
+            }
+            catch (Exception)
+            {
+                response = Request.CreateResponse(HttpStatusCode.BadRequest, "Falha ao atualizar os livros");
+                throw;
+            }
+
+            var tsc = new TaskCompletionSource<HttpResponseMessage>();
+            tsc.SetResult(response);
+            return tsc.Task;
+        }
+        #endregion
+
+        #region Delete
+        [HttpDelete]
+        [Route("livros/{id}")]
+        public Task<HttpResponseMessage> Delete(int id)
+        {
+            HttpResponseMessage response;
+
+            try
+            {
+                repository.Delete(id);
+                response = Request.CreateResponse(HttpStatusCode.OK, "Livro removido com sucesso!");
+            }
+            catch (Exception)
+            {
+                response = Request.CreateResponse(HttpStatusCode.BadRequest, "Falha ao remover o livro");
+                throw;
+            }
+
+            var tsc = new TaskCompletionSource<HttpResponseMessage>();
+            tsc.SetResult(response);
+            return tsc.Task;
         }
         #endregion
 
